@@ -6,21 +6,26 @@ class Solution {
      * @return Integer
      */
     function search($nums, $target) {
-        $start = 0;
-    
-        $length = count($nums);
         
-        $end = (int) ceil($length / 2);
+        $count = count($nums);
         
-        for($i = $start; $i < $end; $i ++) {
-            if($nums[$i] == $target)
-                return $i;
-            elseif($target > $nums[$end - 1]){
-                $start = $end -1;
-                $i = $end -1;
-                $end = $length;
+        $low    = 0; // First index.
+        
+        $high   = $count - 1; // Last index.
+
+        while ($low <= $high) {
+
+            $middle = (int) floor(($low + $high) / 2);
+
+            if ($nums[$middle] == $target) {
+                return $middle;   
+            } elseif ($nums[$middle] > $target) {
+                $high = $middle - 1;
+            } else {
+                $low = $middle + 1;
             }
         }
+
         return -1;
     }
 }
