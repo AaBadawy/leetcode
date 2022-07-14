@@ -12,18 +12,15 @@ class Solution extends VersionControl {
         
         $end = $n;
         
-        if($n === 1)
-            return 1;
-        
         while($start <= $end){
             
-            $middle = (int) (($start + $end) / 2);
+            $currentV = (int) (($start + $end) / 2);
             
-            if($this->isBadVersion($middle)) {
-                $end = $middle - 1;
+            if($this->isBadVersion($currentV)) {
+                $end = $currentV - 1;
             }
             else{
-                $start = $middle + 1;
+                $start = $currentV + 1;
             }
             
         }
