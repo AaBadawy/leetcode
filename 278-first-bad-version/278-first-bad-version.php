@@ -12,6 +12,9 @@ class Solution extends VersionControl {
         
         $end = $n;
         
+        if($n === 1)
+            return 1;
+        
         while($start <= $end){
             
             $middle = (int) (($start + $end) / 2);
