@@ -1,5 +1,5 @@
 class Solution {
-
+    
     /**
      * @param Integer[] $nums
      * @param Integer $target
@@ -9,23 +9,21 @@ class Solution {
         
         $count = count($nums);
         
-        $low    = 0; // First index.
+        $start = 0;
         
-        $high   = $count - 1; // Last index.
-
-        while ($low <= $high) {
-
-            $middle = (int) floor(($low + $high) / 2);
-
-            if ($nums[$middle] == $target) {
-                return $middle;   
-            } elseif ($nums[$middle] > $target) {
-                $high = $middle - 1;
-            } else {
-                $low = $middle + 1;
-            }
+        $end = $count - 1;
+        
+        while($start <= $end) {
+            $mid = (int) floor(($start + $end) / 2) ;
+            
+            if($nums[$mid] == $target)
+                return $mid;
+            elseif($nums[$mid] > $target)
+                $end = $mid - 1;
+            else
+                $start = $mid +1;
         }
-
+    
         return -1;
     }
 }
