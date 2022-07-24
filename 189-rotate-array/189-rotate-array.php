@@ -26,6 +26,7 @@ class Solution {
             
             $rotates--;
         }
+        
         for($i = $k % $total; $i < $total; $i ++){
             
             $nums[$i] = $result[$start_pointer];
@@ -33,9 +34,5 @@ class Solution {
             $start_pointer ++;
         }
         return null;
-        
-        return null;
-        
-        
     }
 }
