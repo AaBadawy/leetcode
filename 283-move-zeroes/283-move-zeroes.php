@@ -20,6 +20,7 @@ class Solution {
         $end_pointer = $total - 1;
         
         for($i = 0; $i < $total ; $i ++){
+            
             if($nums[$i] == 0){
                 $nums[$end_pointer + 1] = 0;
                 
