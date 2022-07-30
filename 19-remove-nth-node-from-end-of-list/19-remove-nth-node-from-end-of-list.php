@@ -29,12 +29,14 @@ class Solution {
         $count = count($nodes);
         
         if($n == $count){
-            return $count === 1 ? null : $nodes[1];
+            $count === 1 ? $nodes[0] = null : $nodes[0] = $nodes[1];
         }
-        
-        $linked_node = $nodes[$count - $n - 1];
+        else{
+            
+            $linked_node = $nodes[$count - $n - 1];
 
-        $linked_node->next = $nodes[$count - $n + 1];
+            $linked_node->next = $nodes[$count - $n + 1];
+        }
 
         return $nodes[0];
         
